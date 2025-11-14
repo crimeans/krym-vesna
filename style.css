@@ -1,225 +1,132 @@
-:root {
-    --black-color: #130E09;
-    --white-color: #FEFAFA;
-    --red-color: #8b0000;
-    --font-accent: 'Roboto Condensed', sans-serif;
-    --font-main: 'Roboto Condensed', sans-serif;
-}
+/* Базовые настройки */
 
-*, a {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-wrap: break-word;
-    font-size: 100%;
-    vertical-align: baseline;
-    transition: color 0s ease;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
-    overflow-x: hidden;
-    background: var(--black-color);
+    font-family: "SF Pro Display", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f5f5f7;
+    color: #151515;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-.hidden {
-    display: none !important;
-}
-
-/* Main paddings */
+/* Контейнер */
 
 .container {
-    padding: 20px;
-    margin: 0 auto;
-    width: 1200px;
-    max-width: 1200px;
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 32px 24px 40px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
 }
 
-.section {
-    padding: 40px 0;
-}
-
-@media (max-width: 768px) {
-
-    .container {
-        padding: 15px;
-        width: 100%;
-    }
-}
-
-.full-width {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    z-index: 1;
-}
-
-/* Texts */
-
-body {
-    line-height: 1.6;
-    font-family: var(--font-main);
-    font-size: 18px;
-    color: var(--white-color);
-    font-weight: 400;
-}
+/* Заголовки */
 
 h1 {
-    font-family: var(--font-accent);
-    font-weight: 900;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: 28px;
+    font-weight: 700;
     text-align: center;
-    line-height: 140%;
+    margin-bottom: 10px;
+    color: #111111;
 }
 
 h2 {
-    font-family: var(--font-accent);
-    font-weight: 900;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-h3 {
-    font-family: var(--font-main);
+    font-size: 20px;
     font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 10px;
+    margin: 24px 0 10px;
+    color: #202124;
 }
 
-p, h4, h5, h6 {
-    margin-bottom: 10px;
+/* Текст */
+
+p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #222222;
 }
 
-/*@media (max-width: 768px) {
-
-    body {
-        font-size: 14px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-}*/
-
-a {
-    font-family: var(--font-main);
-    color: inherit;
-    text-decoration: underline;
+p strong {
     font-weight: 600;
-    transition: color 0.4s ease;
 }
 
-* a {
-    font-family: inherit;
-    color: inherit;
-    text-decoration: underline;
-    font-weight: inherit;
-    font-size: inherit;
-}
-
-a:hover {
-    text-decoration: underline;
-    text-decoration-color: var(--red-color);
-    color: var(--red-color);
-}
-
-/* Text selection styles*/
-
-::-moz-selection {
-    background: var(--red-color);
-    color: var(--white-color);
-}
-
-::selection {
-    background: var(--red-color);
-    color: var(--white-color);
-}
-
-/* Lists */
+/* Списки */
 
 ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 8px 0 16px 18px;
+    padding-left: 4px;
 }
 
 li {
-    position: relative;
-    padding-left: 30px;
-    margin: 12px 0;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid var(--red-color);
-    padding: 12px 16px;
-    border-radius: 4px;
-    color: var(--white-color);
-    font-size: 1rem;
-    line-height: 1.5;
+    margin-bottom: 6px;
+    font-size: 15px;
 }
 
-    li::before {
-        content: \"\\2713\";
-        position: absolute;
-        left: 10px;
-        top: 14px;
-        color: var(--red-color);
-        font-size: 1rem;
-        font-weight: bold;
+/* Кнопка-ссылка внизу */
+
+.container a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #111827;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #111827;
+    background: #ffffff;
+    transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease, color 0.18s ease;
+}
+
+.container a:hover {
+    background: #111827;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+.container a:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
+}
+
+/* Низ страницы / подпись кампании */
+
+.container p:last-of-type {
+    font-size: 13px;
+    color: #8b8b94;
+}
+
+/* Адаптив под мобильные */
+
+@media (max-width: 600px) {
+    .container {
+        margin: 16px;
+        padding: 24px 18px 30px;
+        border-radius: 14px;
     }
 
-
-/* H1 */
-
-h1 {
-    margin-top: 40px;
-    margin-bottom: 30px;
-    background-color: var(--red-color);
-}
-
-h2 {
-    margin-top: 35px;
-}
-
-/* Button */
-
-.button {
-    text-decoration: none;
-    font-family: var(--font-accent);
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white-color);
-    background: var(--red-color);
-    text-transform: uppercase;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    padding: 7px 12px;
-    transition: color linear 1s, background linear 1s;
-    margin-bottom: 15px;
-}
-
-.button:hover {
-    color: var(--black-color);
-    background: var(--white-color);
-}
-
-@media (max-width: 1000px) {
-
     h1 {
-        margin-top: 30px;
-        font-size: 2rem;
+        font-size: 22px;
     }
 
     h2 {
-        line-height: 140%;
+        font-size: 18px;
     }
 
+    p, li {
+        font-size: 14px;
+    }
 }
+
+
 .
